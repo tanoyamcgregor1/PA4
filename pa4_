@@ -1,0 +1,50 @@
+# Name: Tanoya McGregor
+# Course: COP2073C
+# Assignment: Programming Assignment 4
+
+x <- 1:20
+
+y <- c(-1.49, 3.37, 2.59, -2.78, -3.94, -0.92, 6.43,
+       8.51, 3.41, -8.23, -12.01, -6.58, 2.87, 14.12,
+       9.63, -4.58, -14.78, -11.67, 1.17, 15.62)
+
+plot(x, y,
+     type = "n",
+     main = "An Elaborate Final Plot of Hypothetical Data",
+     xlab = "Index",
+     ylab = "Value",
+     xlim = c(1, 20),
+     ylim = c(-15, 15))
+
+points(x, y,
+       pch = 16,
+       col = "blue")
+
+lines(x, y,
+      lty = 2,
+      col = "gray")
+
+abline(h = 0,
+       lty = 3,
+       col = "red")
+
+points(x[y > 0], y[y > 0],
+       pch = 17,
+       col = "darkgreen")
+
+points(x[y < 0], y[y < 0],
+       pch = 15,
+       col = "purple")
+
+text(x, y,
+     labels = x,
+     pos = 3,
+     cex = 0.7)
+
+legend("topleft",
+       legend = c("All points", "Positive values",
+                  "Negative values", "Connected line", "Zero line"),
+       pch = c(16, 17, 15, NA, NA),
+       lty = c(NA, NA, NA, 2, 3),
+       col = c("blue", "darkgreen", "purple", "gray", "red"),
+       cex = 0.5)
